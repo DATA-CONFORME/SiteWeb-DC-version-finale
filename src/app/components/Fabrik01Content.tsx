@@ -150,7 +150,7 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
                         <img 
                             src={imgLogicielsUS} 
                             alt="Logiciels US" 
-                            className="w-full h-auto rounded-2xl shadow-lg"
+                            className="w-full h-auto rounded-2xl"
                         />
                     </div>
                     
