@@ -76,18 +76,6 @@ const CARDS: IAExpertiseCard[] = [
     isDark: true,
     link: "contact"
   },
-  {
-    id: 6,
-    title: "Sensibilisation des équipes",
-    description: "La conformité IA repose sur les usages humains. Acculturer les équipes permet d'éviter les dérives sans freiner l'innovation.",
-    button: "En savoir plus",
-    bg: "#F0FDF4",
-    iconColor: "#15803D",
-    icon: Users,
-    image: iconSensibilisation,
-    isDark: false,
-    link: "contact"
-  },
 ];
 
 export default function IAExpertiseCarousel({ onNavigate }: IAExpertiseCarouselProps) {
@@ -142,7 +130,7 @@ export default function IAExpertiseCarousel({ onNavigate }: IAExpertiseCarouselP
 
         <div className="flex flex-col items-center gap-3 mb-12 w-full">
           <div className="flex flex-row flex-wrap justify-center gap-3">
-            {CARDS.slice(0, 3).map((card, idx) => (
+            {CARDS.map((card, idx) => (
               <button
                 key={`tab-${card.id}`}
                 onClick={() => goTo(idx)}
@@ -155,24 +143,6 @@ export default function IAExpertiseCarousel({ onNavigate }: IAExpertiseCarouselP
                 {card.title}
               </button>
             ))}
-          </div>
-          <div className="flex flex-row flex-wrap justify-center gap-3">
-            {CARDS.slice(3).map((card, localIdx) => {
-              const idx = localIdx + 3;
-              return (
-                <button
-                  key={`tab-${card.id}`}
-                  onClick={() => goTo(idx)}
-                  className={`px-5 py-2.5 rounded-full text-[14px] font-['Inter:Semi_Bold',sans-serif] transition-all duration-300 border ${
-                    currentIndex === idx
-                      ? 'bg-[#00A9C1] text-white border-[#00A9C1] shadow-[0_4px_12px_rgba(0,169,193,0.3)] scale-105'
-                      : 'bg-white text-[#5A6C7D] border-[#E5E9F0] hover:border-[#0047BA] hover:text-[#0047BA]'
-                  }`}
-                >
-                  {card.title}
-                </button>
-              );
-            })}
           </div>
         </div>
 
