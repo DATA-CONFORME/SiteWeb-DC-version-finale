@@ -3,6 +3,10 @@ import {
   ShieldCheck, Shield, GraduationCap, FileCheck, Search, Users, ChevronLeft, ChevronRight 
 } from 'lucide-react';
 
+import iconRisques from "../../assets/_analyserisques-IA.jpg";
+import iconGouvernance from "../../assets/_gouvernance-IA.jpg";
+import iconSousTraitance from "../../assets/_analyse-IA-ST.jpg";
+
 export interface IAExpertiseCarouselProps {
   onNavigate?: (page: string) => void;
 }
@@ -15,6 +19,7 @@ interface IAExpertiseCard {
   bg: string;
   iconColor: string;
   icon: React.ElementType;
+  image?: string;
   isDark: boolean;
   link?: string;
 }
@@ -28,6 +33,7 @@ const CARDS: IAExpertiseCard[] = [
     bg: "#DBEAFE",
     iconColor: "#2563EB",
     icon: ShieldCheck,
+    image: iconRisques,
     isDark: false,
     link: "contact"
   },
@@ -39,6 +45,7 @@ const CARDS: IAExpertiseCard[] = [
     bg: "#EDE9FE",
     iconColor: "#7C3AED",
     icon: Shield,
+    image: iconGouvernance,
     isDark: false,
     link: "contact"
   },
@@ -72,6 +79,7 @@ const CARDS: IAExpertiseCard[] = [
     bg: "#1E3A5F",
     iconColor: "#FFFFFF",
     icon: Search,
+    image: iconSousTraitance,
     isDark: true,
     link: "contact"
   },
@@ -198,7 +206,15 @@ export default function IAExpertiseCarousel({ onNavigate }: IAExpertiseCarouselP
                     className="w-full h-[180px] flex items-center justify-center relative overflow-hidden"
                     style={{ backgroundColor: card.bg }}
                   >
-                    <Icon size={72} color={card.iconColor} strokeWidth={1.5} className="group-hover/card:scale-105 transition-transform duration-300 relative z-0" />
+                    {card.image ? (
+                      <img 
+                        src={card.image} 
+                        alt={card.title} 
+                        className="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500" 
+                      />
+                    ) : (
+                      <Icon size={72} color={card.iconColor} strokeWidth={1.5} className="group-hover/card:scale-105 transition-transform duration-300 relative z-0" />
+                    )}
                   </div>
 
                   <div className="p-5 flex flex-col flex-grow bg-white">
