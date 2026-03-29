@@ -706,7 +706,7 @@ function SectionStats() {
               <p className="text-[13px] text-[#5A6A7A] leading-relaxed">
                 <span className="font-semibold text-[#0A192F]">team.blue — European SMEs seek greater Data Sovereignty… (2025)</span><br/>
                 Rapport sur la souveraineté des données pour les PME européennes.
-                <a href="https://team.blue/news/european-smes-seek-greater-data-sovereignty/" target="_blank" rel="noopener noreferrer" className="ml-2 text-[#0047BA] hover:underline font-medium italic">Consulter</a>
+                <a href="https://press.team.blue/252488-european-smes-seek-greater-data-sovereignty-amid-rising-trust-concerns-reveals-team-blue-report/" target="_blank" rel="noopener noreferrer" className="ml-2 text-[#0047BA] hover:underline font-medium italic">Consulter</a>
               </p>
             </div>
             <div className="flex items-start gap-3">
