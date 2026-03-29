@@ -65,18 +65,6 @@ const CARDS: IAExpertiseCard[] = [
     link: "formation"
   },
   {
-    id: 4,
-    title: "Livrables & preuves (audit-ready)",
-    description: "Une démarche utile si elle est prouvable. Nous produisons des livrables exploitables en interne et présentables en audit.",
-    button: "En savoir plus",
-    bg: "#FAECE7",
-    iconColor: "#E06B4D",
-    icon: FileCheck,
-    image: iconLivrables,
-    isDark: false,
-    link: "contact"
-  },
-  {
     id: 5,
     title: "Analyse des IA comme sous-traitants (approche DPO)",
     description: "Les outils d'IA agissent souvent comme sous-traitants : contrats, flux, localisation, transferts et responsabilités doivent être maîtrisés.",
@@ -169,7 +157,7 @@ export default function IAExpertiseCarousel({ onNavigate }: IAExpertiseCarouselP
             ))}
           </div>
           <div className="flex flex-row flex-wrap justify-center gap-3">
-            {CARDS.slice(3, 6).map((card, localIdx) => {
+            {CARDS.slice(3).map((card, localIdx) => {
               const idx = localIdx + 3;
               return (
                 <button
