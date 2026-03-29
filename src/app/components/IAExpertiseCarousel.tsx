@@ -43,7 +43,7 @@ const CARDS: IAExpertiseCard[] = [
   {
     id: 2,
     title: "Gouvernance IA & préparation IA Act",
-    description: "Mettre en place une gouvernance claire, traçable et alignée avec vos exigences RGPD et vos futures obligations IA Act.",
+    description: "Mettre en place une gouvernance claire, traçable et alignée avec vos exigences RGPD et vos obligations IA Act.",
     button: "En savoir plus",
     bg: "#EDE9FE",
     iconColor: "#7C3AED",
