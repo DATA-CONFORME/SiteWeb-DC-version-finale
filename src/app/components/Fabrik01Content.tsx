@@ -4,6 +4,7 @@ import {
   MessageSquare, Layout, ShieldCheck, 
   Database, Zap, Lock, Globe
 } from 'lucide-react';
+import imgLogicielsUS from '../../assets/logiciels-US.jpg';
 
 export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: string) => void }) {
   return (
@@ -144,14 +145,13 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
                 {/* Before Column */}
-                <div className="flex flex-col items-center lg:items-end">
-                    <div className="grid grid-cols-4 gap-4 mb-10 opacity-60 max-w-[320px]">
-                        {/* Placeholder icons representing US tools */}
-                        {[...Array(8)].map((_, i) => (
-                            <div key={i} className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center grayscale">
-                                <Globe size={20} className="text-gray-300" />
-                            </div>
-                        ))}
+                <div className="flex flex-col items-center lg:items-end w-full">
+                    <div className="mb-10 w-full max-w-[400px]">
+                        <img 
+                            src={imgLogicielsUS} 
+                            alt="Logiciels US" 
+                            className="w-full h-auto rounded-2xl shadow-lg grayscale opacity-70"
+                        />
                     </div>
                     
                     <ul className="space-y-4 text-right">
