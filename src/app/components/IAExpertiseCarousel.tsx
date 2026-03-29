@@ -6,6 +6,9 @@ import {
 import iconRisques from "../../assets/_analyserisques-IA.jpg";
 import iconGouvernance from "../../assets/_gouvernance-IA.jpg";
 import iconSousTraitance from "../../assets/_analyse-IA-ST.jpg";
+import iconFormations from "../../assets/formations-mockup.png";
+import iconLivrables from "../../assets/audit-rgpd-mockup.png";
+import iconSensibilisation from "../../assets/ia-equipe-mockup.png";
 
 export interface IAExpertiseCarouselProps {
   onNavigate?: (page: string) => void;
@@ -57,6 +60,7 @@ const CARDS: IAExpertiseCard[] = [
     bg: "#D1FAE5",
     iconColor: "#059669",
     icon: GraduationCap,
+    image: iconFormations,
     isDark: false,
     link: "formation"
   },
@@ -68,6 +72,7 @@ const CARDS: IAExpertiseCard[] = [
     bg: "#FAECE7",
     iconColor: "#E06B4D",
     icon: FileCheck,
+    image: iconLivrables,
     isDark: false,
     link: "contact"
   },
@@ -91,6 +96,7 @@ const CARDS: IAExpertiseCard[] = [
     bg: "#F0FDF4",
     iconColor: "#15803D",
     icon: Users,
+    image: iconSensibilisation,
     isDark: false,
     link: "contact"
   },
