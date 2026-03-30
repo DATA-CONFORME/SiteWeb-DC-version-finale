@@ -50,13 +50,44 @@ function Navbar({ currentPage, onNavigate }: { currentPage?: string; onNavigate?
 
       {/* Navigation links */}
       <div className="flex items-center gap-12">
-        <Link
-          to="/"
-          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 whitespace-nowrap cursor-pointer ${path === "/" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
-            }`}
-        >
-          Conformité et Opportunités
-        </Link>
+        <div className="relative group">
+          <Link
+            to="/"
+            className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 whitespace-nowrap cursor-pointer ${path === "/" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+              }`}
+          >
+            Conformité et Opportunités
+          </Link>
+          {/* Dropdown submenu */}
+          <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div className="bg-white rounded-lg shadow-lg border border-[rgba(0,71,186,0.1)] py-2 min-w-[320px]">
+              <Link
+                to="/#services-formations"
+                className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
+              >
+                Nos Services & Formations
+              </Link>
+              <Link
+                to="/#offres-pricing"
+                className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
+              >
+                Budget compliance adapté
+              </Link>
+              <Link
+                to="/#rgpd-cybersec"
+                className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
+              >
+                Le RGPD et les normes de Cybersécurités
+              </Link>
+              <Link
+                to="/#pilotage-conformite"
+                className="block w-full text-left px-6 py-3 font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px] hover:bg-[#ECF0FF] hover:text-[#00A9C1] transition-colors duration-200 cursor-pointer"
+              >
+                Pilotage de la conformité
+              </Link>
+            </div>
+          </div>
+        </div>
         <Link
           to="/formation"
           className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 cursor-pointer ${path === "/formation" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
