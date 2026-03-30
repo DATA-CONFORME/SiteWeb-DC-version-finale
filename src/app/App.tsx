@@ -88,13 +88,6 @@ function Navbar({ currentPage, onNavigate }: { currentPage?: string; onNavigate?
             </div>
           </div>
         </div>
-        <Link
-          to="/formation"
-          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 cursor-pointer ${path === "/formation" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
-            }`}
-        >
-          Formation
-        </Link>
         <div className="relative group">
           <Link
             to="/ia-conforme"
@@ -122,11 +115,11 @@ function Navbar({ currentPage, onNavigate }: { currentPage?: string; onNavigate?
           </div>
         </div>
         <Link
-          to="/about"
-          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 cursor-pointer ${path === "/about" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+          to="/formation"
+          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 cursor-pointer ${path === "/formation" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
             }`}
         >
-          À propos
+          Formation
         </Link>
         <Link
           to="/news"
@@ -134,6 +127,13 @@ function Navbar({ currentPage, onNavigate }: { currentPage?: string; onNavigate?
             }`}
         >
           News
+        </Link>
+        <Link
+          to="/about"
+          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 cursor-pointer ${path === "/about" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+            }`}
+        >
+          À propos
         </Link>
         <Link
           to="/contact"
