@@ -29,10 +29,10 @@ services:
       - internal   # non exposé à Caddy, uniquement joignable depuis front
 
 networks:
-  # Réseau interne entre front et api (jamais exposé à Caddy)
+  # Réseau privé entre front et api — pas exposé à Caddy,
+  # mais api doit pouvoir joindre internet (SMTP Brevo)
   internal:
     driver: bridge
-    internal: true
 
   # Réseau partagé avec Caddy — doit exister avant docker compose up
   # Créer avec : docker network create testapp
