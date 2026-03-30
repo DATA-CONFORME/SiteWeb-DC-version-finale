@@ -123,7 +123,7 @@ function Navbar({ currentPage, onNavigate }: { currentPage?: string; onNavigate?
           style={{ backgroundImage: "linear-gradient(135deg, #0047BA 0%, #00A9C1 100%)" }}
         >
           <span className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[16px]">
-            RDV gratuit en visio de 30 mn ici
+            RDV gratuit en visio de 30 mn
           </span>
         </a>
       </div>
