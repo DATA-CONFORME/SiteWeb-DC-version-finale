@@ -1,0 +1,40 @@
+services:
+
+  # ── Front : nginx sert le SPA React + proxyfie /api vers le conteneur api ──
+  front:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_BASE: /
+    container_name: dataconforme-front
+    restart: unless-stopped
+    depends_on:
+      - api
+    networks:
+      - internal   # pour joindre le conteneur api
+      - testapp    # pour être joignable par Caddy
+
+  # ── API : serveur Node gérant POST /api/contact (SMTP Brevo) ───────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: dataconforme-api
+    restart: unless-stopped
+    env_file: .env   # contient SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_USER, SMTP_PASS, CONTACT_*
+    environment:
+      PORT: "3001"
+    networks:
+      - internal   # non exposé à Caddy, uniquement joignable depuis front
+
+networks:
+  # Réseau interne entre front et api (jamais exposé à Caddy)
+  internal:
+    driver: bridge
+    internal: true
+
+  # Réseau partagé avec Caddy — doit exister avant docker compose up
+  # Créer avec : docker network create testapp
+  testapp:
+    external: true

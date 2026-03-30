@@ -1,47 +1,77 @@
 import React, { useState } from "react";
 import { Navbar, Footer } from "../App";
-import { Phone, Mail, Send, CheckCircle2, Globe, ChevronDown } from "lucide-react";
+import { Phone, Mail, Send, CheckCircle2, Globe, ChevronDown, Loader2, AlertCircle } from "lucide-react";
+
+type FormStatus = "idle" | "sending" | "success" | "error";
+
+const INITIAL_FORM = {
+  prenom: "",
+  nom: "",
+  email: "",
+  pays: "France",
+  tel: "",
+  fonction: "",
+  secteur: "",
+  motif: "",
+  message: "",
+  consent: false,
+};
 
 export default function ContactPage({ onNavigate }: { onNavigate: (page: string) => void }) {
-  const [formData, setFormData] = useState({
-    prenom: "",
-    nom: "",
-    email: "",
-    pays: "France",
-    tel: "",
-    fonction: "",
-    secteur: "",
-    motif: "",
-    message: "",
-    consent: false
-  });
-
+  const [formData, setFormData] = useState(INITIAL_FORM);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [apiError, setApiError] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+      [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     }));
+    if (errors[name]) setErrors(prev => { const n = { ...prev }; delete n[name]; return n; });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simple validation logic
+  const validate = () => {
     const newErrors: Record<string, string> = {};
-    if (!formData.prenom) newErrors.prenom = "Veuillez remplir ce champ obligatoire.";
-    if (!formData.nom) newErrors.nom = "Veuillez remplir ce champ obligatoire.";
-    if (!formData.email) newErrors.email = "L'e-mail est obligatoire.";
+    if (!formData.prenom.trim()) newErrors.prenom = "Veuillez remplir ce champ obligatoire.";
+    if (!formData.nom.trim()) newErrors.nom = "Veuillez remplir ce champ obligatoire.";
+    if (!formData.email.trim()) newErrors.email = "L'e-mail est obligatoire.";
     if (!formData.fonction) newErrors.fonction = "Veuillez préciser votre fonction.";
     if (!formData.secteur) newErrors.secteur = "Veuillez préciser votre secteur d'activité.";
     if (!formData.motif) newErrors.motif = "Veuillez préciser le motif de votre demande.";
+    if (!formData.message.trim()) newErrors.message = "Veuillez saisir votre message.";
     if (!formData.consent) newErrors.consent = "Vous devez accepter le traitement de vos données.";
-    
+    return newErrors;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const newErrors = validate();
     setErrors(newErrors);
-    
-    if (Object.keys(newErrors).length === 0) {
-      alert("Message envoyé ! (Simulation)");
+    if (Object.keys(newErrors).length > 0) return;
+
+    setStatus("sending");
+    setApiError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setFormData(INITIAL_FORM);
+      } else {
+        const body = await res.json().catch(() => ({}));
+        setApiError(body.error ?? "Une erreur est survenue. Veuillez réessayer.");
+        setStatus("error");
+      }
+    } catch {
+      setApiError("Impossible de joindre le serveur. Vérifiez votre connexion.");
+      setStatus("error");
     }
   };
 
@@ -236,8 +266,11 @@ export default function ContactPage({ onNavigate }: { onNavigate: (page: string)
                   onChange={handleChange}
                   placeholder="Comment pouvons-nous vous aider ?"
                   rows={5}
-                  className="w-full px-5 py-4 rounded-xl bg-[#F8FAFB] border-[1.5px] border-[#E5E9F0] outline-none focus:border-[#00A9C1] font-['Inter:Regular',sans-serif] transition-all duration-200 resize-none"
+                  className={`w-full px-5 py-4 rounded-xl bg-[#F8FAFB] border-[1.5px] outline-none font-['Inter:Regular',sans-serif] transition-all duration-200 resize-none ${
+                    errors.message ? "border-red-400 focus:border-red-500" : "border-[#E5E9F0] focus:border-[#00A9C1]"
+                  }`}
                 ></textarea>
+                {errors.message && <p className="text-red-500 text-[12px] font-['Inter:Medium',sans-serif]">{errors.message}</p>}
               </div>
 
               {/* RGPD Consent */}
@@ -261,17 +294,48 @@ export default function ContactPage({ onNavigate }: { onNavigate: (page: string)
                 {errors.consent && <p className="text-red-500 text-[12px] font-['Inter:Medium',sans-serif]">{errors.consent}</p>}
               </div>
 
+              {/* Message d'erreur API */}
+              {status === "error" && (
+                <div className="flex items-start gap-3 p-4 rounded-xl bg-red-50 border border-red-200">
+                  <AlertCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+                  <p className="text-red-700 text-[14px] font-['Inter:Regular',sans-serif]">{apiError}</p>
+                </div>
+              )}
+
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full lg:w-auto px-12 py-5 rounded-xl text-white font-['Manrope:Bold',sans-serif] text-[18px] shadow-lg hover:shadow-xl hover:opacity-95 transition-all duration-200 flex items-center justify-center gap-3 active:scale-[0.98] cursor-pointer"
+                  disabled={status === "sending"}
+                  className="w-full lg:w-auto px-12 py-5 rounded-xl text-white font-['Manrope:Bold',sans-serif] text-[18px] shadow-lg hover:shadow-xl hover:opacity-95 transition-all duration-200 flex items-center justify-center gap-3 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
                   style={{ backgroundImage: "linear-gradient(135deg, #0047BA 0%, #00A9C1 100%)" }}
                 >
-                  Envoyer mon message
-                  <Send className="w-5 h-5" />
+                  {status === "sending" ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Envoi en cours…
+                    </>
+                  ) : (
+                    <>
+                      Envoyer mon message
+                      <Send className="w-5 h-5" />
+                    </>
+                  )}
                 </button>
               </div>
             </form>
+
+            {/* Confirmation succès */}
+            {status === "success" && (
+              <div className="mt-8 flex items-start gap-4 p-6 rounded-2xl bg-[#F0FDF4] border border-[#86EFAC]">
+                <CheckCircle2 className="w-7 h-7 text-[#22C55E] shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-['Manrope:Bold',sans-serif] text-[#166534] text-[16px]">Message envoyé avec succès !</p>
+                  <p className="font-['Inter:Regular',sans-serif] text-[#166534]/80 text-[14px] mt-1">
+                    Notre équipe vous répondra dans les plus brefs délais. Un accusé de réception vous a été adressé par e-mail.
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Info Side */}
