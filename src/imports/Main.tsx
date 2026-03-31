@@ -235,35 +235,7 @@ function SectionBentoGridServices() {
   );
 }
 
-function Container14() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal h-[48px] justify-center leading-[24px] not-italic relative shrink-0 text-[#3d494c] text-[16px] w-[434.48px]">
-        <p className="mb-0">Rejoignez les organisations qui se protègent et en font</p>
-        <p>un atout concurrentiel</p>
-      </div>
-    </div>
-  );
-}
-
-function Heading6() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 6">
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[32px] justify-center leading-[0] not-italic relative shrink-0 text-[#0A192F] text-[32px]">
-        <p className="leading-[32px] whitespace-nowrap">Prêt pour que votre organisation renforce ses actifs ?</p>
-      </div>
-    </div>
-  );
-}
-
-function Container13() {
-  return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start w-full max-w-full md:max-w-[448px] relative shrink-0" data-name="Container">
-      <Heading6 />
-      <Container14 />
-    </div>
-  );
-}
+/* Figma-to-code nested containers removed for cleaner layout */
 
 function Button1() {
   return (
@@ -272,29 +244,32 @@ function Button1() {
       href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30" 
       target="_blank" 
       rel="noopener noreferrer" 
-      className="bg-[#0047BA] content-stretch flex flex-col items-center justify-center px-[40px] py-[16px] relative rounded-[8px] shrink-0 no-underline hover:opacity-90 transition-opacity" 
+      className="bg-[#0047BA] flex items-center justify-center px-[40px] py-[16px] rounded-[8px] no-underline hover:opacity-90 transition-opacity w-full md:w-auto" 
       data-name="Button"
     >
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[18px] text-center text-white w-[210.64px]">
-        <p className="leading-[28px]">Discutons-en</p>
-      </div>
+      <span className="font-['Manrope:Bold',sans-serif] font-bold text-[18px] text-white">Discutons-en</span>
     </a>
   );
 }
 
-function Container15() {
-  return (
-    <div className="content-stretch flex items-start relative shrink-0" data-name="Container">
-      <Button1 />
-    </div>
-  );
-}
+/* Figma-to-code Container15 removed */
 
 function SectionCtAsSocialProof() {
   return (
-    <div className="relative content-stretch flex flex-col md:flex-row items-center justify-between w-full max-w-[1280px] mx-auto px-[24px] py-[48px] gap-8 md:gap-0" data-name="Section - CTAs / Social Proof">
-      <Container13 />
-      <Container15 />
+    <div className="relative w-full overflow-hidden bg-white" data-name="Section - CTAs / Social Proof">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full max-w-[1280px] mx-auto px-6 py-12 md:py-16 gap-8 md:gap-0">
+        <div className="flex flex-col gap-4 w-full md:max-w-[450px]">
+          <h2 className="m-0 font-['Manrope:Bold',sans-serif] font-bold leading-[1.2] text-[#0A192F] text-[28px] md:text-[32px] w-full break-words">
+            Prêt pour que votre organisation renforce ses actifs ?
+          </h2>
+          <p className="m-0 font-['Inter:Regular',sans-serif] font-normal leading-[1.5] text-[#3d494c] text-[16px] w-full break-words">
+            Rejoignez les organisations qui se protègent et en font un atout concurrentiel
+          </p>
+        </div>
+        <div className="w-full md:w-auto flex shrink-0 mt-4 md:mt-0">
+          <Button1 />
+        </div>
+      </div>
     </div>
   );
 }
