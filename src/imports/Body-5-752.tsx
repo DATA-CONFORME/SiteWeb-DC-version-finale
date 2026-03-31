@@ -7,18 +7,8 @@ import { ServiceCard } from "./ServiceCard";
 
 function Container() {
   return (
-    <div className="absolute inset-0 opacity-10" data-name="Container">
-      <div className="absolute bg-size-[512px_512px] bg-top-left h-[791.5px] left-0 top-0 w-[1280px]" data-name="Image" style={{ backgroundImage: `url('${imgImage}')` }} />
-    </div>
-  );
-}
-
-function Background() {
-  return (
-    <div className="bg-[#90cdfe] inline-flex items-center justify-center px-4 py-2 relative rounded-[12px] mb-4" data-name="Background">
-      <div className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#004b71] text-[12px] md:text-[14px] tracking-[1.2px] uppercase whitespace-nowrap">
-        Gouvernance & IA
-      </div>
+    <div className="absolute inset-0 opacity-10 pointer-events-none" data-name="Container">
+      <div className="absolute bg-size-[512px_512px] bg-top-left h-[791.5px] left-0 top-0 w-full lg:w-[1280px]" data-name="Image" style={{ backgroundImage: `url('${imgImage}')` }} />
     </div>
   );
 }
@@ -26,9 +16,12 @@ function Background() {
 function Heading() {
   return (
     <div className="flex flex-col items-start relative w-full" data-name="Heading 1">
-      <div className="font-['Manrope:Extra_Bold',sans-serif] leading-[1.1] text-white tracking-[-1.0px] w-full text-[40px] md:text-[60px]">
-        <h1 className="m-0 break-words whitespace-normal text-balance">IA Conforme : Maîtrisez l'Intelligence Artificielle</h1>
-      </div>
+      <h1 className="m-0 font-['Manrope:Extra_Bold',sans-serif] leading-[1.1] text-white tracking-[-1.0px] text-[36px] sm:text-[48px] md:text-[56px] lg:text-[60px] text-left">
+        IA Conforme :<br />
+        Maîtrisez<br />
+        l'Intelligence<br />
+        Artificielle
+      </h1>
     </div>
   );
 }
@@ -36,23 +29,9 @@ function Heading() {
 function Container3() {
   return (
     <div className="flex flex-col items-start w-full relative max-w-[576px]" data-name="Container">
-      <div className="font-['Inter:Regular',sans-serif] font-normal leading-[1.6] text-[#cbe6ff] text-[18px] md:text-[20px] w-full">
-        <p className="m-0 break-words whitespace-normal text-balance">
-          Naviguez sereinement dans l'EU AI Act. Assurez un déploiement sécurisé, éthique et conforme de vos systèmes d'intelligence artificielle.
-        </p>
-      </div>
-    </div>
-  );
-}
-
-function Container5() {
-  return (
-    <div className="relative shrink-0 size-[16px]" data-name="Container">
-      <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
-        <g id="Container">
-          <path d={svgPaths.p1a406200} fill="var(--fill-0, #082100)" id="Icon" />
-        </g>
-      </svg>
+      <p className="m-0 font-['Inter:Regular',sans-serif] font-normal leading-[1.6] text-[#cbe6ff] text-[16px] sm:text-[18px] md:text-[20px] w-full text-left">
+        Naviguez sereinement dans l'EU AI Act. Assurez un déploiement sécurisé, éthique et conforme de vos systèmes d'intelligence artificielle.
+      </p>
     </div>
   );
 }
@@ -63,12 +42,12 @@ function Button() {
       href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/30min"
       target="_blank"
       rel="noopener noreferrer"
-      className="bg-[#8dfd52] content-stretch flex items-center justify-center px-[32px] py-[17px] relative rounded-[12px] shrink-0 no-underline hover:opacity-90 transition-opacity cursor-pointer" 
+      className="bg-[#9eff5c] flex items-center justify-center px-[24px] sm:px-[32px] py-[12px] sm:py-[16px] rounded-xl no-underline hover:opacity-90 transition-opacity cursor-pointer w-full sm:w-auto min-h-[50px] sm:min-h-[60px] shrink-0" 
       data-name="Button"
     >
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[#082100] text-[18px] text-center w-[175.81px]">
-        <p className="leading-[28px]">Réserver un Audit IA</p>
-      </div>
+      <span className="font-['Manrope:Bold',sans-serif] font-bold leading-none text-[#082100] text-[16px] sm:text-[18px] text-center whitespace-nowrap">
+        Réserver un Audit IA
+      </span>
     </a>
   );
 }
@@ -79,20 +58,19 @@ function Button1() {
       href={`${import.meta.env.BASE_URL}plan_audit_ia.pdf`}
       target="_blank" 
       rel="noopener noreferrer"
-      className="backdrop-blur-[6px] bg-[rgba(255,255,255,0.1)] content-stretch flex flex-col items-center justify-center px-[33px] py-[17px] relative rounded-[12px] shrink-0 hover:bg-[rgba(255,255,255,0.15)] transition-colors cursor-pointer no-underline" 
+      className="bg-[#305271] backdrop-blur-md border border-[rgba(255,255,255,0.1)] flex items-center justify-center px-[24px] sm:px-[32px] py-[12px] sm:py-[16px] rounded-xl hover:bg-[rgba(255,255,255,0.1)] transition-colors cursor-pointer no-underline w-full sm:w-auto min-h-[50px] sm:min-h-[60px] shrink-0 shadow-[0_4px_12px_rgba(0,0,0,0.1)]" 
       data-name="Button"
     >
-      <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.2)] border-solid inset-0 pointer-events-none rounded-[12px]" />
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[28px] justify-center leading-[0] relative shrink-0 text-[18px] text-center text-white min-w-[150px]">
-        <p className="leading-[28px]">L'Audit Fabrik01</p>
-      </div>
+      <span className="font-['Manrope:Bold',sans-serif] font-bold leading-none text-white text-[16px] sm:text-[18px] text-center whitespace-nowrap">
+        L'Audit Fabrik01
+      </span>
     </a>
   );
 }
 
 function Container4() {
   return (
-    <div className="flex flex-col sm:flex-row gap-[16px] items-start pt-[16px] relative w-full" data-name="Container">
+    <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center pt-2 sm:pt-4 relative w-full max-w-[576px]" data-name="Container">
       <Button />
       <Button1 />
     </div>
@@ -101,8 +79,7 @@ function Container4() {
 
 function Container2() {
   return (
-    <div className="flex flex-col gap-[32px] items-start relative w-full" data-name="Container">
-      <Background />
+    <div className="flex flex-col gap-6 sm:gap-[32px] items-start relative w-full z-10" data-name="Container">
       <Heading />
       <Container3 />
       <Container4 />
@@ -110,138 +87,13 @@ function Container2() {
   );
 }
 
-function Container7() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Container">
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold h-[24px] justify-center leading-[0] relative shrink-0 text-[#001e40] text-[16px] w-[213.14px]">
-        <p className="leading-[24px]">Score de Conformité Global</p>
-      </div>
-    </div>
-  );
-}
-
-function Container8() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Container">
-      <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold h-[32px] justify-center leading-[0] not-italic relative shrink-0 text-[#143b00] text-[24px] w-[55.45px]">
-        <p className="leading-[32px]">84%</p>
-      </div>
-    </div>
-  );
-}
-
-function Container6() {
-  return (
-    <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center justify-between relative w-full">
-          <Container7 />
-          <Container8 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Background2() {
-  return (
-    <div className="bg-[#dee8ff] h-[16px] overflow-clip relative rounded-[12px] shrink-0 w-full" data-name="Background">
-      <div className="absolute bg-gradient-to-r from-[#143b00] inset-[0_16%_0_0] to-[#8dfd52]" data-name="Gradient" />
-    </div>
-  );
-}
-
-function Container10() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#1d638f] text-[10px] tracking-[1px] uppercase w-full">
-        <p className="leading-[15px]">Risque Éthique</p>
-      </div>
-    </div>
-  );
-}
-
-function Container11() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[#001e40] text-[20px] w-full">
-        <p className="leading-[28px]">Faible</p>
-      </div>
-    </div>
-  );
-}
-
-function Background3() {
-  return (
-    <div className="bg-[#f0f3ff] col-1 justify-self-stretch relative rounded-[4px] row-1 self-start shrink-0" data-name="Background">
-      <div className="content-stretch flex flex-col items-start p-[16px] relative w-full">
-        <Container10 />
-        <Container11 />
-      </div>
-    </div>
-  );
-}
-
-function Container12() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#1d638f] text-[10px] tracking-[1px] uppercase w-full">
-        <p className="leading-[15px]">Transparence</p>
-      </div>
-    </div>
-  );
-}
-
-function Container13() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-col font-['Manrope:Bold',sans-serif] font-bold justify-center leading-[0] relative shrink-0 text-[#001e40] text-[20px] w-full">
-        <p className="leading-[28px]">Optimisée</p>
-      </div>
-    </div>
-  );
-}
-
-function Background4() {
-  return (
-    <div className="bg-[#f0f3ff] col-2 justify-self-stretch relative rounded-[4px] row-1 self-start shrink-0" data-name="Background">
-      <div className="content-stretch flex flex-col items-start p-[16px] relative w-full">
-        <Container12 />
-        <Container13 />
-      </div>
-    </div>
-  );
-}
-
-function Container9() {
-  return (
-    <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[_75px] relative shrink-0 w-full" data-name="Container">
-      <Background3 />
-      <Background4 />
-    </div>
-  );
-}
-
-function Background1() {
-  return (
-    <div className="bg-white relative rounded-[8px] shrink-0 w-full" data-name="Background">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[24px] items-start p-[24px] relative w-full">
-        <div className="absolute bg-[rgba(255,255,255,0)] inset-0 rounded-[8px] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)]" data-name="Overlay+Shadow" />
-        <Container6 />
-        <Background2 />
-        <Container9 />
-      </div>
-    </div>
-  );
-}
-
 function OverlayBorderOverlayBlur() {
   return (
-    <div className="col-2 justify-self-stretch relative row-1 self-center shrink-0 flex items-center justify-center" data-name="Overlay+Border+OverlayBlur">
+    <div className="w-full relative flex items-center justify-center lg:justify-end z-10" data-name="Overlay+Border+OverlayBlur">
       <img 
         src={imgNewIllustration} 
         alt="IA Conforme Illustration" 
-        className="w-full h-auto max-w-[850px] object-contain"
+        className="w-full h-auto max-w-[400px] md:max-w-[500px] lg:max-w-[700px] 2xl:max-w-[850px] object-contain drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500"
       />
     </div>
   );
@@ -249,11 +101,11 @@ function OverlayBorderOverlayBlur() {
 
 function Container1() {
   return (
-    <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-[64px] max-w-[1280px] w-full relative z-10" data-name="Container">
-      <div className="w-full lg:w-1/2 flex justify-start relative">
+    <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 max-w-[1280px] w-full relative z-10" data-name="Container">
+      <div className="w-full lg:w-[50%] xl:w-[45%] flex justify-start relative order-2 lg:order-1">
         <Container2 />
       </div>
-      <div className="w-full lg:w-1/2 flex justify-center items-center relative">
+      <div className="w-full lg:w-[50%] xl:w-[55%] flex justify-center lg:justify-end items-center relative order-1 lg:order-2">
         <OverlayBorderOverlayBlur />
       </div>
     </div>
@@ -262,7 +114,7 @@ function Container1() {
 
 function HeroSection() {
   return (
-    <div className="relative flex flex-col items-center w-full px-6 md:px-[32px] py-16 md:py-[128px] overflow-hidden" data-name="Hero Section" style={{ backgroundImage: "linear-gradient(135deg, rgb(0, 30, 64) 0%, rgb(29, 99, 143) 100%)" }}>
+    <div className="relative flex flex-col items-center w-full px-6 md:px-[32px] lg:px-[64px] py-16 md:py-[80px] lg:py-[128px] overflow-hidden" data-name="Hero Section" style={{ backgroundImage: "linear-gradient(135deg, rgb(0, 30, 64) 0%, rgb(29, 99, 143) 100%)" }}>
       <Container />
       <Container1 />
     </div>
