@@ -4,6 +4,7 @@ import {
   MessageSquare, Layout, ShieldCheck, 
   Database, Zap, Lock, Globe
 } from 'lucide-react';
+import fabrik01Logo from '../../assets/fabrik01-noir-transpa.png';
 import imgLogicielsUS from '../../assets/logiciels-US.png';
 
 export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: string) => void }) {
@@ -12,9 +13,14 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
       
       {/* Hero Section */}
       <section className="relative pt-20 pb-28 px-6 md:px-12 lg:px-24 overflow-hidden bg-white">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
           <div className="flex-1 text-[#0A192F] z-10">
-            <h1 className="text-5xl md:text-7xl font-['Manrope:Extra_Bold',sans-serif] font-extrabold mb-6 leading-[1.1] tracking-tight">
+            <img 
+              src={fabrik01Logo} 
+              alt="Fabrik01 Logo" 
+              className="h-16 w-auto mb-8 object-contain"
+            />
+            <h1 className="text-4xl md:text-6xl font-['Manrope:Extra_Bold',sans-serif] font-extrabold mb-6 leading-[1.1] tracking-tight">
               Pilotage IA <br />
               <span className="text-[#00A9C1]">sur-mesure & sécurisé</span>
             </h1>
