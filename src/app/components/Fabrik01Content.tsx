@@ -231,7 +231,7 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
                         onClick={() => onNavigate('contact')}
                         className="border border-white/20 hover:border-white/40 text-white px-10 py-4 rounded-xl font-bold transition-all"
                     >
-                        Contactez-nous
+                        En savoir plus sur Fabrik01
                     </button>
                 </div>
             </div>
