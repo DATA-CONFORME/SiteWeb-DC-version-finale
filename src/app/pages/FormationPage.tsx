@@ -85,7 +85,7 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
           </div>
 
           {/* Programs Grid */}
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Program 1: DPO */}
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-[#E5E9F0]">
               <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6" style={{ background: 'linear-gradient(135deg, #0047BA 0%, #00A9C1 100%)' }}>
@@ -320,7 +320,7 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="text-center p-8">
               <div className="w-20 h-20 rounded-2xl mx-auto mb-6 flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0047BA15 0%, #00A9C115 100%)' }}>
                 <BookOpen className="w-10 h-10 text-[#0047BA]" />

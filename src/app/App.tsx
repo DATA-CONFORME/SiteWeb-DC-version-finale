@@ -18,7 +18,7 @@ import AboutPage from "./pages/AboutPage";
 import LegalNoticePage from "./pages/LegalNoticePage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TrustCenterPage from "./pages/TrustCenterPage";
-import { BookOpen, Clock, Award, Users, FileCheck, Shield, Download, ChevronRight, Building2, HardDrive, CheckCircle2, GraduationCap, ShieldCheck, ScrollText, Lock, Scale } from "lucide-react";
+import { BookOpen, Clock, Award, Users, FileCheck, Shield, Download, ChevronRight, Building2, HardDrive, CheckCircle2, GraduationCap, ShieldCheck, ScrollText, Lock, Scale, Menu, X } from "lucide-react";
 import isoLogo from '../assets/iso27001-logo.png';
 import nis2Logo from '../assets/nis2-logo.png';
 import qualiopiLogo from '../assets/qualiopi-logo.png';
@@ -31,29 +31,35 @@ import teamMelvin from '../assets/team-melvin.png';
 import teamRaphael from '../assets/team-raphael.png';
 
 function Navbar({ currentPage, onNavigate }: { currentPage?: string; onNavigate?: (page: string) => void }) {
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const path = location.pathname;
 
+  // Closes mobile menu if clicked outside or navigated
+  useEffect(() => {
+    setIsOpen(false);
+  }, [path]);
+
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 bg-white/95 backdrop-blur-sm"
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-8 bg-white/95 backdrop-blur-sm shadow-sm"
       style={{ height: "96px" }}
     >
       {/* Logo */}
-      <Link to="/" className="flex items-center cursor-pointer">
+      <Link to="/" className="flex items-center cursor-pointer relative z-50">
         <img
           src={logoDataConforme}
           alt="Data Conforme"
-          className="h-[80px] w-auto object-contain"
+          className="h-[60px] lg:h-[80px] w-auto object-contain"
         />
       </Link>
 
-      {/* Navigation links */}
-      <div className="flex items-center gap-12">
+      {/* Desktop Navigation links */}
+      <div className="hidden lg:flex items-center gap-10 xl:gap-12">
         <div className="relative group">
           <Link
             to="/"
-            className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 whitespace-nowrap cursor-pointer ${path === "/" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+            className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] xl:text-[16px] transition-colors duration-200 whitespace-nowrap cursor-pointer ${path === "/" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
               }`}
           >
             Conformité et Opportunités
@@ -91,7 +97,7 @@ function Navbar({ currentPage, onNavigate }: { currentPage?: string; onNavigate?
         <div className="relative group">
           <Link
             to="/ia-conforme"
-            className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 whitespace-nowrap cursor-pointer ${path === "/ia-conforme" || path === "/fabrik01" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+            className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] xl:text-[16px] transition-colors duration-200 whitespace-nowrap cursor-pointer ${path === "/ia-conforme" || path === "/fabrik01" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
               }`}
           >
             Intelligence artificielle
@@ -116,51 +122,139 @@ function Navbar({ currentPage, onNavigate }: { currentPage?: string; onNavigate?
         </div>
         <Link
           to="/formation"
-          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 cursor-pointer ${path === "/formation" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+          className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] xl:text-[16px] transition-colors duration-200 cursor-pointer ${path === "/formation" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
             }`}
         >
           Formation
         </Link>
         <Link
           to="/news"
-          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 cursor-pointer ${path === "/news" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+          className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] xl:text-[16px] transition-colors duration-200 cursor-pointer ${path === "/news" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
             }`}
         >
           News
         </Link>
         <Link
           to="/about"
-          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 cursor-pointer ${path === "/about" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+          className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] xl:text-[16px] transition-colors duration-200 cursor-pointer ${path === "/about" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
             }`}
         >
           À propos
         </Link>
         <Link
           to="/contact"
-          className={`font-['Inter:Regular',sans-serif] font-normal text-[16px] transition-colors duration-200 cursor-pointer ${path === "/contact" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+          className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] xl:text-[16px] transition-colors duration-200 cursor-pointer ${path === "/contact" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
             }`}
         >
           Contact
         </Link>
       </div>
 
-      {/* CTA Button */}
-      <div className="flex items-center">
+      {/* Desktop CTA Button */}
+      <div className="hidden lg:flex items-center">
         <a
           href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-5 py-[10px] rounded-[8px] cursor-pointer shadow-md hover:opacity-90 transition-opacity duration-200 no-underline flex items-center justify-center"
+          className="px-5 py-[10px] rounded-[8px] cursor-pointer shadow-md hover:opacity-90 transition-opacity duration-200 no-underline flex items-center justify-center whitespace-nowrap"
           style={{ backgroundImage: "linear-gradient(135deg, #0047BA 0%, #00A9C1 100%)" }}
         >
-          <span className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[16px]">
-            RDV gratuit en visio de 30 mn
+          <span className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[15px] xl:text-[16px]">
+            RDV gratuit
           </span>
         </a>
+      </div>
+
+      {/* Mobile Burger Toggle */}
+      <button 
+        className="lg:hidden relative z-50 p-2 text-[#0A192F] hover:text-[#00A9C1] transition-colors cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle menu"
+      >
+        {isOpen ? <X size={28} /> : <Menu size={28} />}
+      </button>
+
+      {/* Mobile Menu Overlay */}
+      <div 
+        className={`fixed inset-0 min-h-screen bg-white z-40 lg:hidden overflow-y-auto transition-transform duration-300 ease-in-out pt-28 px-6 pb-12 ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex flex-col gap-6">
+          <Link
+            to="/"
+            onClick={() => setIsOpen(false)}
+            className={`font-['Inter:Semi_Bold',sans-serif] text-[20px] pb-4 border-b border-gray-100 ${path === "/" ? "text-[#00A9C1]" : "text-[#0A192F]"}`}
+          >
+            Conformité et Opportunités
+          </Link>
+          <div className="pl-4 flex flex-col gap-4 border-l-2 border-[#00A9C1]/20 pb-4">
+             <Link to="/#services-formations" onClick={() => setIsOpen(false)} className="text-[16px] text-[#5A6C7D]">Nos Services & Formations</Link>
+             <Link to="/#offres-pricing" onClick={() => setIsOpen(false)} className="text-[16px] text-[#5A6C7D]">Budget compliance adapté</Link>
+             <Link to="/#rgpd-cybersec" onClick={() => setIsOpen(false)} className="text-[16px] text-[#5A6C7D]">Le RGPD et normes</Link>
+             <Link to="/#pilotage-conformite" onClick={() => setIsOpen(false)} className="text-[16px] text-[#5A6C7D]">Pilotage automatisé</Link>
+          </div>
+
+          <Link
+            to="/ia-conforme"
+            onClick={() => setIsOpen(false)}
+            className={`font-['Inter:Semi_Bold',sans-serif] text-[20px] pb-4 border-b border-gray-100 ${path === "/ia-conforme" || path === "/fabrik01" ? "text-[#00A9C1]" : "text-[#0A192F]"}`}
+          >
+            Intelligence artificielle
+          </Link>
+          <div className="pl-4 flex flex-col gap-4 border-l-2 border-[#00A9C1]/20 pb-4">
+             <Link to="/ia-conforme#ia-services" onClick={() => setIsOpen(false)} className="text-[16px] text-[#5A6C7D]">Conformité des IA</Link>
+             <Link to="/fabrik01" onClick={() => setIsOpen(false)} className="text-[16px] text-[#5A6C7D]">Fabrik01</Link>
+          </div>
+
+          <Link
+            to="/formation"
+            onClick={() => setIsOpen(false)}
+            className={`font-['Inter:Semi_Bold',sans-serif] text-[20px] pb-4 border-b border-gray-100 ${path === "/formation" ? "text-[#00A9C1]" : "text-[#0A192F]"}`}
+          >
+            Formation
+          </Link>
+
+          <Link
+            to="/news"
+            onClick={() => setIsOpen(false)}
+            className={`font-['Inter:Semi_Bold',sans-serif] text-[20px] pb-4 border-b border-gray-100 ${path === "/news" ? "text-[#00A9C1]" : "text-[#0A192F]"}`}
+          >
+            News
+          </Link>
+
+          <Link
+            to="/about"
+            onClick={() => setIsOpen(false)}
+            className={`font-['Inter:Semi_Bold',sans-serif] text-[20px] pb-4 border-b border-gray-100 ${path === "/about" ? "text-[#00A9C1]" : "text-[#0A192F]"}`}
+          >
+            À propos
+          </Link>
+
+          <Link
+            to="/contact"
+            onClick={() => setIsOpen(false)}
+            className={`font-['Inter:Semi_Bold',sans-serif] text-[20px] pb-6 ${path === "/contact" ? "text-[#00A9C1]" : "text-[#0A192F]"}`}
+          >
+            Contact
+          </Link>
+
+          <a
+            href="https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=30"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
+            className="w-full py-4 rounded-xl text-center shadow-lg font-['Manrope:Bold',sans-serif] text-[18px] text-white"
+            style={{ backgroundImage: "linear-gradient(135deg, #0047BA 0%, #00A9C1 100%)" }}
+          >
+            RDV gratuit en visio (30mn)
+          </a>
+        </div>
       </div>
     </nav>
   );
 }
+
 
 export { Navbar };
 

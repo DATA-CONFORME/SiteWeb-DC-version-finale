@@ -210,11 +210,11 @@ export default function ServicesCarousel({ onNavigate }: ServicesCarouselProps) 
         </div>
 
         {/* Carousel with side arrows */}
-        <div className="relative flex items-center px-10 md:px-14">
+        <div className="relative flex items-center px-0 md:px-14 -mx-4 md:mx-0">
           {/* Left Arrow */}
           <button
             onClick={prev}
-            className="absolute left-0 z-10 w-12 h-12 rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.12)] flex items-center justify-center text-[#1A2340] hover:-translate-y-0.5 hover:text-[#00A9C1] hover:shadow-[0_8px_25px_rgba(0,169,193,0.2)] transition-all duration-300"
+            className="hidden md:flex absolute left-0 z-10 w-12 h-12 rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.12)] items-center justify-center text-[#1A2340] hover:-translate-y-0.5 hover:text-[#00A9C1] hover:shadow-[0_8px_25px_rgba(0,169,193,0.2)] transition-all duration-300"
             aria-label="Service précédent"
           >
             <ChevronLeft size={26} strokeWidth={2.5} />
@@ -223,7 +223,7 @@ export default function ServicesCarousel({ onNavigate }: ServicesCarouselProps) 
           {/* Scroll track */}
           <div
             ref={containerRef}
-            className="services-scroll flex overflow-x-auto gap-[20px] pb-4 pt-4 w-full"
+            className="services-scroll flex overflow-x-auto gap-[20px] pb-4 pt-4 w-full px-4 md:px-0 snap-x snap-mandatory"
           >
             {CARDS.map((card, idx) => {
               const Icon = card.icon;
@@ -231,7 +231,7 @@ export default function ServicesCarousel({ onNavigate }: ServicesCarouselProps) 
                 <div
                   key={card.id}
                   ref={idx === 0 ? cardRef : undefined}
-                  className={`flex-shrink-0 group/card bg-white rounded-[16px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-all duration-300 overflow-hidden flex flex-col w-[280px] md:w-[340px] lg:w-[390px] ${idx === 0 ? 'ml-2' : ''} ${idx === CARDS.length - 1 ? 'mr-2' : ''} ${currentIndex === idx ? 'ring-[3px] ring-[#00A9C1] shadow-[0_0_0_6_rgba(0,169,193,0.15)]' : ''}`}
+                  className={`flex-shrink-0 snap-center group/card bg-white rounded-[16px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-all duration-300 overflow-hidden flex flex-col w-[280px] md:w-[340px] lg:w-[390px] ${idx === 0 ? 'ml-2' : ''} ${idx === CARDS.length - 1 ? 'mr-2' : ''} ${currentIndex === idx ? 'ring-[3px] ring-[#00A9C1] shadow-[0_0_0_6_rgba(0,169,193,0.15)]' : ''}`}
                 >
                   {/* Top Image Part */}
                   <div
@@ -293,7 +293,7 @@ export default function ServicesCarousel({ onNavigate }: ServicesCarouselProps) 
           {/* Right Arrow */}
           <button
             onClick={next}
-            className="absolute right-0 z-10 w-12 h-12 rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.12)] flex items-center justify-center text-[#1A2340] hover:-translate-y-0.5 hover:text-[#00A9C1] hover:shadow-[0_8px_25px_rgba(0,169,193,0.2)] transition-all duration-300"
+            className="hidden md:flex absolute right-0 z-10 w-12 h-12 rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.12)] items-center justify-center text-[#1A2340] hover:-translate-y-0.5 hover:text-[#00A9C1] hover:shadow-[0_8px_25px_rgba(0,169,193,0.2)] transition-all duration-300"
             aria-label="Service suivant"
           >
             <ChevronRight size={26} strokeWidth={2.5} />
