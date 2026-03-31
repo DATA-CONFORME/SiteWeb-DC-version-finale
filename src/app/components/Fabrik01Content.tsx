@@ -12,7 +12,7 @@ export default function Fabrik01Content({ onNavigate }: { onNavigate: (page: str
     <div className="w-full bg-white font-['Inter:Regular',sans-serif] text-[#1A2340]">
       
       {/* Hero Section */}
-      <section className="relative pt-20 pb-28 px-6 md:px-12 lg:px-24 overflow-hidden bg-white">
+      <section className="relative pt-12 pb-16 px-6 md:px-12 lg:px-24 overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
           <div className="flex-1 text-[#0A192F] z-10">
             <img 
