@@ -6,7 +6,7 @@ import qualiopiLogo from '../../assets/qualiopi-logo.png';
 export function HorizontalAntiGravityStrip() {
   const stats = [
     { value: "+200", label: "Professionnels formés" },
-    { value: "100%", label: "Taux de satisfaction" },
+    { value: "85,2%", label: "Taux de satisfaction" },
     { value: "+6 ans", label: "Années d'expérience" },
     { value: "100%", label: "Certifié Qualiopi" },
   ];
@@ -210,7 +210,7 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
                     <Clock className="w-4 h-4 text-[#00A9C1]" />
                   </div>
                   <span className="font-['Inter:Regular',sans-serif] font-normal text-[#0A192F] text-[15px]">
-                    3 jours (21 heures)
+                    1 journée (7 heures)
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -233,7 +233,7 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
               
               <div className="flex flex-col gap-3 w-full">
                 <a 
-                  href={`${import.meta.env.BASE_URL}programme_formation_ia.pdf`}
+                  href={`${import.meta.env.BASE_URL}Programme-IA-CADRE-JURIDIQUE.pdf`}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-full py-3 px-6 rounded-lg transition-all duration-200 hover:shadow-lg flex items-center justify-center text-center no-underline cursor-pointer"
@@ -245,7 +245,7 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
                 </a>
                 
                 <a 
-                  href={`${import.meta.env.BASE_URL}Fiche_Produit_IA_Qualiopi.pdf`}
+                  href={`${import.meta.env.BASE_URL}Fiche produit -IA-Cadre-juridique.pdf`}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-full py-3 px-6 rounded-lg border-2 border-[#0047BA] hover:bg-[#F8FAFB] transition-colors duration-200 flex items-center justify-center text-center no-underline cursor-pointer"
