@@ -122,7 +122,7 @@ Le workflow [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-page
 
 ## Fichiers PDF
 
-Placez les PDF référencés par la maquette à la racine du dossier [`public/`](public/) (ex. `public/programme_formation_ia.pdf`). Ils sont copiés tels quels dans `dist` au build.
+Placez les PDF référencés à la racine du dossier [`public/`](public/) (ex. `public/programme_formation_ia.pdf`). Ils sont copiés tels quels dans `dist` au build.
 
 ## Branche de déploiement
 
