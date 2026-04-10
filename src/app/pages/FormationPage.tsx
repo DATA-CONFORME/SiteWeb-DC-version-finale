@@ -93,7 +93,7 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
               </div>
               
               <h3 className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[28px] mb-4">
-                IA Act & Conformité
+                IA : Cadre juridique et bonnes pratiques d'utilisation
               </h3>
               
               <p className="font-['Inter:Regular',sans-serif] font-normal text-[#5A6C7D] text-[16px] leading-[1.6] mb-6 flex-1">
