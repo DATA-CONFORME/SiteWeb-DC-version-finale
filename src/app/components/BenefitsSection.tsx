@@ -43,7 +43,7 @@ const accentColors: Record<string, string> = {
 
 export default function BenefitsSection() {
   return (
-    <section className="bg-section-bg py-20 px-6">
+    <section className="bg-section-bg pt-8 pb-16 px-6">
       <div className="max-w-5xl mx-auto">
 
         {/* Eyebrow */}
@@ -61,7 +61,7 @@ export default function BenefitsSection() {
         </h2>
 
         {/* Sous-titre */}
-        <p className="text-center text-muted font-light text-base leading-relaxed max-w-[520px] mx-auto mb-14">
+        <p className="text-center text-[#6b7a99] font-light text-base leading-relaxed max-w-[520px] mx-auto mb-14">
           L'IA Act et le RGPD redéfinissent la valeur de votre organisation.
           La conformité est devenue l'exigence n°1 de vos clients et partenaires.
         </p>
@@ -114,7 +114,7 @@ function BenefitCard({
       <h3 className="font-poppins font-semibold text-navy text-[17px] leading-snug mb-3">
         {title}
       </h3>
-      <p className="text-muted text-sm font-light leading-relaxed">
+      <p className="text-[#6b7a99] text-sm font-light leading-relaxed">
         {body}
       </p>
 

@@ -159,7 +159,7 @@ export default function ServicesCarousel({ onNavigate }: ServicesCarouselProps) 
   return (
     <section
       id="services-formations"
-      className="w-full bg-[#F8FAFC] pt-12 pb-24 relative scroll-mt-32"
+      className="w-full bg-[#F8FAFC] pt-4 pb-24 relative scroll-mt-32"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
