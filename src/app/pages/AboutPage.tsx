@@ -1,6 +1,5 @@
 import { Navbar, Footer } from "../App";
 import teamJerome from '../../assets/team-jerome.png';
-import teamMatthias from '../../assets/team-matthias.png';
 import teamNosima from '../../assets/team-nosima.png';
 import teamMelvin from '../../assets/team-melvin.png';
 import teamRaphael from '../../assets/team-raphael.png';
@@ -41,7 +40,6 @@ export default function AboutPage({ onNavigate }: { onNavigate: (page: string) =
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { name: "Jérôme Ficat", role: "Fondateur & CEO / Expert RGPD", desc: "Juriste TECH, DPO certifié depuis 2020. Plus de 50 audits RGPD et Cyber. Fondateur de Data conforme et Fabrik01", image: teamJerome, level: "SENIOR" },
-              { name: "Matthias de Forni", role: "CTO / Dev. IA & Automatisation", desc: "Expert IA, agents intelligents (n8n, CrewAI). Développe des solutions souveraines sur mesure.", image: teamMatthias, level: "SENIOR" },
               { name: "Nosimahéfa Rakotoarisoa", role: "Expert RGPD & IA Souveraine, juriste", desc: "Analyse et accompagnement RGPD/AI Act, assistant Délégué à la Protection des Données.", image: teamNosima, level: "JUNIOR" },
               { name: "Melvin Bouyssou", role: "Dev. IA & Automatisation", desc: "Développement web, IA et création d'automatisations complexes.", image: teamMelvin, level: "JUNIOR" },
               { name: "Raphaël SANTOS", role: "Business Developer", desc: "Développement et lancement des offres de transformation IA pour les organisations.", image: teamRaphael, level: "JUNIOR" }

@@ -25,7 +25,6 @@ import qualiopiLogo from '../assets/qualiopi-logo.png';
 
 // Team Images
 import teamJerome from '../assets/team-jerome.png';
-import teamMatthias from '../assets/team-matthias.png';
 import teamNosima from '../assets/team-nosima.png';
 import teamMelvin from '../assets/team-melvin.png';
 import teamRaphael from '../assets/team-raphael.png';
