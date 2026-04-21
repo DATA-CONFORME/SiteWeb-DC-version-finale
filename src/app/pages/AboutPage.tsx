@@ -37,14 +37,14 @@ export default function AboutPage({ onNavigate }: { onNavigate: (page: string) =
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1000px] mx-auto">
             {[
               { name: "Jérôme Ficat", role: "Fondateur & CEO / Expert RGPD", desc: "Juriste TECH, DPO certifié depuis 2020. Plus de 50 audits RGPD et Cyber. Fondateur de Data conforme et Fabrik01", image: teamJerome, level: "SENIOR" },
               { name: "Nosimahéfa Rakotoarisoa", role: "Expert RGPD & IA Souveraine, juriste", desc: "Analyse et accompagnement RGPD/AI Act, assistant Délégué à la Protection des Données.", image: teamNosima, level: "JUNIOR" },
               { name: "Melvin Bouyssou", role: "Dev. IA & Automatisation", desc: "Développement web, IA et création d'automatisations complexes.", image: teamMelvin, level: "JUNIOR" },
               { name: "Raphaël SANTOS", role: "Business Developer", desc: "Développement et lancement des offres de transformation IA pour les organisations.", image: teamRaphael, level: "JUNIOR" }
             ].map((member, idx) => (
-              <div key={idx} className="relative bg-white p-8 rounded-2xl shadow-sm border border-[#E5E9F0] hover:shadow-md transition-shadow">
+              <div key={idx} className="relative bg-white p-8 rounded-2xl shadow-sm border border-[#E5E9F0] hover:shadow-md transition-shadow h-full flex flex-col">
                 {member.level && (
                   <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-[11px] font-['Manrope:Bold',sans-serif] tracking-wider ${member.level === 'SENIOR'
                       ? 'bg-[#0047BA]/10 text-[#0047BA]'
@@ -53,12 +53,12 @@ export default function AboutPage({ onNavigate }: { onNavigate: (page: string) =
                     {member.level}
                   </div>
                 )}
-                <div className="w-20 h-20 rounded-full bg-[#00A9C1]/10 flex items-center justify-center mb-6 overflow-hidden border-2 border-[#00A9C1]/20">
+                <div className="w-20 h-20 rounded-full bg-[#00A9C1]/10 flex items-center justify-center mb-6 overflow-hidden border-2 border-[#00A9C1]/20 shrink-0">
                   <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                 </div>
                 <h3 className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[22px] mb-2">{member.name}</h3>
                 <p className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[#00A9C1] text-[14px] uppercase tracking-wide mb-4">{member.role}</p>
-                <p className="font-['Inter:Regular',sans-serif] text-[#5A6C7D] text-[15px] leading-relaxed">{member.desc}</p>
+                <p className="font-['Inter:Regular',sans-serif] text-[#5A6C7D] text-[15px] leading-relaxed flex-grow">{member.desc}</p>
               </div>
             ))}
           </div>
