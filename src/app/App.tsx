@@ -18,7 +18,7 @@ import AboutPage from "./pages/AboutPage";
 import LegalNoticePage from "./pages/LegalNoticePage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TrustCenterPage from "./pages/TrustCenterPage";
-import { BookOpen, Clock, Award, Users, FileCheck, Shield, Download, ChevronRight, Building2, HardDrive, CheckCircle2, GraduationCap, ShieldCheck, ScrollText, Lock, Scale, Menu, X } from "lucide-react";
+import { BookOpen, Clock, Award, Users, FileCheck, Shield, Download, ChevronRight, ChevronDown, Building2, HardDrive, CheckCircle2, GraduationCap, ShieldCheck, ScrollText, Lock, Scale, Menu, X } from "lucide-react";
 import isoLogo from '../assets/iso27001-logo.png';
 import nis2Logo from '../assets/nis2-logo.png';
 import qualiopiLogo from '../assets/qualiopi-logo.png';
@@ -58,10 +58,11 @@ function Navbar({ currentPage, onNavigate }: { currentPage?: string; onNavigate?
         <div className="relative group">
           <Link
             to="/"
-            className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] xl:text-[16px] transition-colors duration-200 whitespace-nowrap cursor-pointer ${path === "/" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+            className={`flex items-center gap-1 font-['Inter:Regular',sans-serif] font-normal text-[15px] xl:text-[16px] transition-colors duration-200 whitespace-nowrap cursor-pointer ${path === "/" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
               }`}
           >
             Conformité et Opportunités
+            <ChevronDown className="w-4 h-4 transition-transform duration-300 ease-out group-hover:rotate-180" />
           </Link>
           {/* Dropdown submenu */}
           <div className="absolute top-full left-0 pt-2">
@@ -98,10 +99,11 @@ function Navbar({ currentPage, onNavigate }: { currentPage?: string; onNavigate?
         <div className="relative group">
           <Link
             to="/ia-conforme"
-            className={`font-['Inter:Regular',sans-serif] font-normal text-[15px] xl:text-[16px] transition-colors duration-200 whitespace-nowrap cursor-pointer ${path === "/ia-conforme" || path === "/fabrik01" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
+            className={`flex items-center gap-1 font-['Inter:Regular',sans-serif] font-normal text-[15px] xl:text-[16px] transition-colors duration-200 whitespace-nowrap cursor-pointer ${path === "/ia-conforme" || path === "/fabrik01" ? "text-[#00A9C1]" : "text-[#0A192F] hover:text-[#00A9C1]"
               }`}
           >
             Intelligence artificielle
+            <ChevronDown className="w-4 h-4 transition-transform duration-300 ease-out group-hover:rotate-180" />
           </Link>
           {/* Dropdown submenu */}
           <div className="absolute top-full left-0 pt-2">
