@@ -51,7 +51,11 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
           </p>
           
           <div className="flex justify-center gap-4">
-            <button className="px-8 py-4 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer" style={{ background: 'linear-gradient(135deg, #0047BA 0%, #00A9C1 100%)' }}>
+            <button 
+              onClick={() => document.getElementById('nos-formations')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-4 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer" 
+              style={{ background: 'linear-gradient(135deg, #0047BA 0%, #00A9C1 100%)' }}
+            >
               <span className="font-['Manrope:Bold',sans-serif] font-bold text-white text-[16px]">
                 Voir nos formations
               </span>
@@ -73,7 +77,7 @@ export default function FormationPage({ onNavigate }: { onNavigate: (page: strin
       <HorizontalAntiGravityStrip />
 
       {/* Programs Section */}
-      <section className="w-full py-24 px-8 bg-[#F8FAFB]">
+      <section id="nos-formations" className="w-full py-24 px-8 bg-[#F8FAFB] scroll-mt-32">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-['Manrope:Bold',sans-serif] font-bold text-[#0A192F] text-[48px] mb-4">
