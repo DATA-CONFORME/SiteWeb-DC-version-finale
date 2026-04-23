@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { CheckCircle2, ShieldCheck, Search, FileText, UserCheck, HardDrive, GraduationCap, Building2, Laptop, HeartPulse, Factory, Globe2, ChevronDown, ChevronUp } from "lucide-react";
 import isoLogo from "../../assets/iso27001-logo.png";
 import nis2Logo from "../../assets/nis2-logo.png";
-import applicationDpo from "../../assets/application-dpo.png";
+import applicationDpo from "../../assets/application-dpo.jpg";
 import applicationIa from "../../assets/application-ia.jpg";
 
 const publicUrl = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
@@ -256,13 +256,10 @@ export function SectionOffres() {
 
 export function SectionEcosystem() {
   return (
-    <div id="pilotage-conformite" className="w-full py-[100px] bg-[#0A192F] relative overflow-hidden scroll-mt-32" data-name="Section - Ecosystem">
-      <div className="max-w-[1280px] mx-auto px-[32px]">
+    <div id="pilotage-conformite" className="w-full pt-[64px] pb-[100px] bg-[#0A192F] relative overflow-hidden scroll-mt-32" data-name="Section - Ecosystem">
+      <div className="max-w-[1400px] mx-auto px-[32px]">
         {/* Header */}
         <div className="text-center mb-[80px]">
-          <div className="inline-block px-[16px] py-[6px] rounded-full bg-[#E6F6F9]/10 text-[#00A9C1] font-['Inter:Semi_Bold',sans-serif] text-[14px] mb-[20px] border border-[#00A9C1]/20">
-            Pilotage Digital
-          </div>
           <h2 className="font-['Manrope:Extra_Bold',sans-serif] text-white text-[32px] md:text-[48px] leading-tight tracking-tight">
             Nous pilotons votre conformité avec un logiciel innovant
           </h2>
@@ -270,7 +267,7 @@ export function SectionEcosystem() {
 
         <div className="flex flex-col gap-[120px]">
           {/* BLOC A : Application de suivi DPO */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-24 items-center">
             {/* Image GAUCHE */}
             <div className="relative group order-2 lg:order-1">
               <div className="absolute -inset-4 bg-gradient-to-r from-[#00A9C1]/20 to-[#82E600]/20 rounded-[32px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -293,7 +290,7 @@ export function SectionEcosystem() {
               </p>
               <div className="grid grid-cols-1 gap-6 mb-10">
                 {[
-                  { title: "Indicateurs en temps réel", desc: "Vision claire et instantanée de votre maturité et de votre score global." },
+                  { title: "Indicateurs en temps réel", desc: "Vision claire and instantanée de votre maturité et de votre score global." },
                   { title: "Analyse multicritère", desc: "Détection des signaux faibles via des vues radar détaillées (9 axes)." },
                   { title: "Traçabilité & Efficacité", desc: "Gestion des registres et pilotage des actions de la vérification à la clôture." }
                 ].map((point, i) => (
@@ -315,7 +312,7 @@ export function SectionEcosystem() {
           </div>
 
           {/* BLOC B : Application Gouvernance IA */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-24 items-center">
             {/* Texte GAUCHE */}
             <div className="flex flex-col items-start order-1">
               <span className="text-[#82E600] font-['Inter:Semi_Bold',sans-serif] tracking-wider uppercase text-[14px] mb-4">
