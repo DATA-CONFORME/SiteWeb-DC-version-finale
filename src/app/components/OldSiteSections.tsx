@@ -306,7 +306,7 @@ export function SectionEcosystem() {
                 ))}
               </div>
               <p className="text-[#82E600] italic font-['Inter:Medium',sans-serif] text-[16px] border-l-2 border-[#82E600] pl-4">
-                L'avantage Data Conforme : Prenez des décisions éclairées et gagnez des contrats en prouvant la robustesse de votre écosystème.
+                Votre dossier RGPD ne reste pas dans un tiroir: vous pouvez le suivre et le piloter en temps réel
               </p>
             </div>
           </div>
