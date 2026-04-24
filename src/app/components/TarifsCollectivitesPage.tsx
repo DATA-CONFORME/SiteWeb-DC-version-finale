@@ -68,7 +68,7 @@ export default function TarifsCollectivitesPage({ onNavigate }: { onNavigate?: (
                 
                 <h3 className="font-['Manrope:Extra_Bold',sans-serif] text-[36px] lg:text-[42px] leading-tight mb-6">
                   <span className="text-[#0A192F]">Votre application innovante de suivis DPO</span><br />
-                  <span className="text-[#82E600]">Incluse dans votre abonnement</span>
+                  <span className="text-[#72CB00]">Incluse dans votre abonnement</span>
                 </h3>
                 
                 <p className="font-['Inter:Regular',sans-serif] text-[#5A6C7D] text-[18px] leading-relaxed max-w-[600px] mb-10">
