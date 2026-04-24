@@ -1,7 +1,7 @@
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
 import { Navbar, Footer } from "../App";
-import applicationImage from "../assets/application.jpg";
+import applicationImage from "../../assets/application.jpg";
 
 const plan = {
   id: "serenite-collectivite",
