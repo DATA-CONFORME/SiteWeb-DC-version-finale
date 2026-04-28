@@ -46,7 +46,7 @@ const plans = [
     monthlyPrice: 750,
     annualPrice: 700,
     stripeLink: "https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=45",
-    ctaLabel: "Contactez nous",
+    ctaLabel: "Prendre rendez-vous",
     features: [
       "Toutes les fonctionnalités du pack Sérénité",
       "Conduite du plan cybersécurité et conformité avancée",
