@@ -45,8 +45,8 @@ const plans = [
     highlight: false,
     monthlyPrice: 750,
     annualPrice: 700,
-    stripeLink: "https://buy.stripe.com/fZe8A5aIAciIafCfZ0",
-    ctaLabel: "Passer à Sérénité Pro",
+    stripeLink: "https://calendrier.dataconforme.com/jerome.ficat-dataconforme.com/rendez-vous-jerome-ficat?duration=45",
+    ctaLabel: "Contactez nous",
     features: [
       "Toutes les fonctionnalités du pack Sérénité",
       "Conduite du plan cybersécurité et conformité avancée",
