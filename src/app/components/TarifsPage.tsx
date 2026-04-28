@@ -173,6 +173,11 @@ export default function TarifsPage({ onNavigate }: { onNavigate?: (page: string)
 
                   {/* Price */}
                   <div className="flex items-end gap-2 mb-2">
+                    {plan.id === "serenite-pro" && (
+                      <span className="text-white/40 font-['Inter:Regular',sans-serif] text-[16px] mb-2">
+                        à partir de
+                      </span>
+                    )}
                     <span
                       className={`font-['Manrope:Extra_Bold',sans-serif] text-[56px] leading-none ${
                         plan.highlight ? "text-white" : "text-white/80"
